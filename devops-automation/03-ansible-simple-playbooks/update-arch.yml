@@ -1,0 +1,11 @@
+---
+- name: Update Arch Linux
+  hosts: localhost
+  connection: local
+  become: yes
+
+  tasks:
+    - name: Synchronize package database and upgrade system
+      ansible.builtin.pacman:
+        update_cache: yes
+        upgrade: yes
